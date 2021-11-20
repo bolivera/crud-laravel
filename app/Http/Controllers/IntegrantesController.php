@@ -46,7 +46,7 @@ class IntegrantesController extends Controller
             // INSERTAR EN LA BD
             DB::insert('INSERT INTO integrantes (nombres, apellidos,codigo) values (?,?,?)', [$nombres,$apellidos,$codigo]);
         }
-        return redirect()->back()->with('success', 'Ingregrante guardado correctamente');
+        return redirect()->back()->with('success', 'Integrante guardado correctamente');
 
      }
 

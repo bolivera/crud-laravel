@@ -37,7 +37,7 @@
                                 <td>{{$item->apellidos}}</td>
                                 <td>{{$item->codigo}}</td>
                                 <td>
-                                    <a  href="{{route('editar', $item->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                                    <a  href="{{ route('editar', $item->id) }}" class="btn btn-warning btn-sm">Editar</a>
                                     <button type="button"  class="btn btn-danger btn-sm eliminar" data-id="{{$item->id}}">Eliminar</button>
                                 </td>
                             </tr>
@@ -61,6 +61,7 @@
             var data = {}
                 data.id = $(this).attr('data-id');
                 data._token = "{{ csrf_token() }}",
+
             swal({
                 title: "¿Estás seguro de eliminar?",
                 text: "Una vez eliminado no se podrá recuperar",
@@ -70,6 +71,7 @@
                 })
                 .then((willDelete) => {
                 if (willDelete) {
+                    
                     $.ajax({
                         type: "POST",
                         data: data,
